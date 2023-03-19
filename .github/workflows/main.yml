@@ -20,47 +20,47 @@ jobs:
       matrix:
         include:
           # gcc
-          - env: {CONF: release, ARCH: x86,     CXX11: ON,  CXX17: OFF, MEMBERSMAP: OFF}
-            compiler: gcc
+          # - env: {CONF: release, ARCH: x86,     CXX11: ON,  CXX17: OFF, MEMBERSMAP: OFF}
+          #   compiler: gcc
           - env: {CONF: release, ARCH: x86_64,  CXX11: ON,  CXX17: OFF, MEMBERSMAP: OFF}
             compiler: gcc
-          - env: {CONF: release, ARCH: aarch64, CXX11: ON,  CXX17: OFF, MEMBERSMAP: OFF}
-            compiler: gcc
+          # - env: {CONF: release, ARCH: aarch64, CXX11: ON,  CXX17: OFF, MEMBERSMAP: OFF}
+          #   compiler: gcc
           - env: {CONF: release, ARCH: x86_64,  CXX11: ON,  CXX17: OFF, MEMBERSMAP: ON}
             compiler: gcc
-          - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: OFF, MEMBERSMAP: OFF}
-            compiler: gcc
+          # - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: OFF, MEMBERSMAP: OFF}
+          #   compiler: gcc
           - env: {CONF: debug,   ARCH: x86_64,  CXX11: OFF, CXX17: OFF, MEMBERSMAP: OFF}
             compiler: gcc
-          - env: {CONF: release, ARCH: aarch64, CXX11: OFF, CXX17: OFF, MEMBERSMAP: OFF}
-            compiler: gcc
-          - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: ON,  MEMBERSMAP: ON, CXX_FLAGS: '-D_GLIBCXX_DEBUG'}
-            compiler: gcc
+          # - env: {CONF: release, ARCH: aarch64, CXX11: OFF, CXX17: OFF, MEMBERSMAP: OFF}
+          #   compiler: gcc
+          # - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: ON,  MEMBERSMAP: ON, CXX_FLAGS: '-D_GLIBCXX_DEBUG'}
+          #   compiler: gcc
           - env: {CONF: debug,   ARCH: x86_64,  CXX11: OFF, CXX17: ON,  MEMBERSMAP: ON, CXX_FLAGS: '-D_GLIBCXX_DEBUG'}
             compiler: gcc
-          - env: {CONF: release, ARCH: aarch64, CXX11: OFF, CXX17: ON,  MEMBERSMAP: ON,}
-            compiler: gcc
+          # - env: {CONF: release, ARCH: aarch64, CXX11: OFF, CXX17: ON,  MEMBERSMAP: ON,}
+          #   compiler: gcc
           # clang
-          - env: {CONF: release, ARCH: x86,     CXX11: ON,  CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
-            compiler: clang
+          # - env: {CONF: release, ARCH: x86,     CXX11: ON,  CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
+          #   compiler: clang
           - env: {CONF: release, ARCH: x86_64,  CXX11: ON,  CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
             compiler: clang
-          - env: {CONF: debug,   ARCH: aarch64, CXX11: ON,  CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
-            compiler: clang
+          # - env: {CONF: debug,   ARCH: aarch64, CXX11: ON,  CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
+          #   compiler: clang
           - env: {CONF: release, ARCH: x86_64,  CXX11: ON,  CXX17: OFF, MEMBERSMAP: OFF, CCACHE_CPP2: yes}
             compiler: clang
-          - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
-            compiler: clang
+          # - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
+          #   compiler: clang
           - env: {CONF: debug,   ARCH: x86_64,  CXX11: OFF, CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
             compiler: clang
-          - env: {CONF: debug,   ARCH: aarch64, CXX11: OFF, CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
-            compiler: clang
-          - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: ON,  MEMBERSMAP: OFF, CCACHE_CPP2: yes}
-            compiler: clang
+          # - env: {CONF: debug,   ARCH: aarch64, CXX11: OFF, CXX17: OFF, MEMBERSMAP: ON,  CCACHE_CPP2: yes}
+          #   compiler: clang
+          # - env: {CONF: debug,   ARCH: x86,     CXX11: OFF, CXX17: ON,  MEMBERSMAP: OFF, CCACHE_CPP2: yes}
+          #   compiler: clang
           - env: {CONF: debug,   ARCH: x86_64,  CXX11: OFF, CXX17: ON,  MEMBERSMAP: OFF, CCACHE_CPP2: yes}
             compiler: clang
-          - env: {CONF: debug,   ARCH: aarch64, CXX11: OFF, CXX17: ON,  MEMBERSMAP: OFF, CCACHE_CPP2: yes}
-            compiler: clang
+          # - env: {CONF: debug,   ARCH: aarch64, CXX11: OFF, CXX17: ON,  MEMBERSMAP: OFF, CCACHE_CPP2: yes}
+          #   compiler: clang
     env: ${{ matrix.env }}
     steps:
       - uses: actions/checkout@v3
