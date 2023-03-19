@@ -80,9 +80,9 @@ jobs:
             ${{ runner.os }}-ccache-${{ matrix.compiler }}-${{ matrix.env }}-
             ${{ runner.os }}-ccache-${{ matrix.compiler }}-
             ${{ runner.os }}-ccache-
-      - name: Install CCache
+      - name: Install Deps
         run: |
-          sudo apt-get install -y -q ccache
+          sudo apt-get install -y -q ccache valgrind
       - name: CCache stats
         run: |
           ccache -s
